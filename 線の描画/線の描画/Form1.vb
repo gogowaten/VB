@@ -1,14 +1,18 @@
-﻿Public Class Form1
+﻿'直線の描画
+'頂点はLabelコントロールで表示して、マウスドラッグで移動できるように
+
+
+Public Class Form1
     Private beginPoint As Point 'マウスドラッグ開始点記録用
-    Private myPen As New Pen(Brushes.Aqua, 3) '直線用のPen
+    Private myPen As New Pen(Brushes.Magenta, 5) '直線用のPen
     Private myPoints As New List(Of Point) '頂点座標群記録用
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Call MyInitial()
+        Call MyInitialize()
     End Sub
 
     '初期化
-    Private Sub MyInitial()
+    Private Sub MyInitialize()
         '初期座標設定
         myPoints = New List(Of Point)(New Point() {
                                       New Point(0, 0),
